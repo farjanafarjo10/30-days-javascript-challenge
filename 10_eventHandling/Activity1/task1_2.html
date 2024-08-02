@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 50vh;
+            box-shadow: 2px 2px 2px 2px black;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- task-1 -->
+    <p id="content">I am Farjana</p>
+    <button id="myBtn">Click Me</button>
+    <br>
+
+    <!-- task-1 -->
+    <img id="img"
+        src="https://media.macphun.com/img/uploads/customer/how-to/608/15542038745ca344e267fb80.28757312.jpg?q=85&w=1340">
+
+    <script>
+        // task - 1
+        let myBtn = document.querySelector("#myBtn")
+        let p = document.querySelector("p")
+
+        myBtn.addEventListener("click", () => {
+            p.innerHTML = "I love JavaScript"
+        })
+
+        // task-2
+        document.getElementById("img").addEventListener("dblclick", function () {
+            if (this.style.display === "none") {
+                this.style.display = "block";
+            } else {
+                this.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

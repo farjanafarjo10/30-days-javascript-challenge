@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form</h1>
+    <form id="personDetails">
+        <label for="fname">First Name : </label>
+        <input id="fname" name="fname" type="text"><br><br>
+
+        <label for="laname">Last Name</label>
+        <input id="laname" name="laname" type="text"><br><br>
+
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <select id="op">
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+    </select>
+
+    <p id="selectedOp"></p>
+
+    <script>
+        // task 7
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById('personDetails')
+
+            form.addEventListener('submit', (event) => {
+                //it prevent the default action associated with an event from occurring.
+                event.preventDefault()
+
+                const formData = new FormData(form)
+
+                dataObj = {}
+
+                formData.forEach((val, key) => {
+                    dataObj[key] = val
+                })
+
+                console.log(dataObj)
+            })
+        })
+        // task 8
+        document.addEventListener('DOMContentLoaded', (e) => {
+            const option = document.getElementById('op')
+            option.addEventListener('change', (e) => {
+                const para = document.getElementById('selectedOp')
+                para.textContent = e.target.value
+            })
+        })
+    </script>
+</body>
+
+</html>

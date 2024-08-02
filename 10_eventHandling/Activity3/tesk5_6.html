@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label> Type something :</label><br><br>
+    <input id="myInput" type="text" placeholder="Type something">
+    <p id="displayParagraph"></p>
+
+    <script>
+        // task-5
+        let input = document.getElementById('myInput')
+
+        input.addEventListener('keydown', (e) => {
+            console.log(e.target.value)
+        })
+
+        // task-6
+        input.addEventListener('keydown', (e) => {
+            let para = document.getElementById('displayParagraph')
+            para.textContent = e.target.value
+        })
+    </script>
+</body>
+
+</html>
